@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Agriboost from '../assets/AgriBoost.svg';
-import Carbon from '../assets/Vector.svg';
-import Google from '../assets/devicon_google.svg';
+import HeaderLogin from '../../components/HeaderLogin';
+import Google from '../../assets/devicon_google.svg';
 
 import './Login.css';
-/*test */
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,11 +20,10 @@ const Login = () => {
   };
 
   return (
-    <div className="text-custom-green h-[100vh] flex justify-center items-center">
+    <div>
       <div>
-      <img src={Carbon} />
-        <img src={Agriboost} />
-        <h1 className="text-2xl text-custom-darkgreen font-bold text-center mt-5">
+      <HeaderLogin />
+        <h1 className="text-2xl text-custom-darkgreen font-bold text-center py-4">
           Masuk
         </h1>
         <form action="">
@@ -81,7 +79,7 @@ const Login = () => {
                 Ingat Saya
               </label>
             </div>
-            <button className="text-sm font-medium text-base text-black ">
+            <button className="text-sm font-medium text-black ">
               Lupa Kata Sandi?
             </button>
           </div>
@@ -90,7 +88,7 @@ const Login = () => {
           <div className="mt-8 flex flex-col gap-y-4">
             <button
               className={`py-3 rounded-xl ${
-                isFilled ? 'bg-custom-green' : 'bg-custom-logingreen'
+                isFilled ? 'bg-custom-green' : 'bg-custom-login-green'
               } text-white text-normal`}
               disabled={!isFilled}>
               Masuk
@@ -98,7 +96,7 @@ const Login = () => {
 
             <div className='relative-fill flex items-center justify-center py-1'>
               <div className='w-2/3 h-[1.5px] bg-custom-logingreen'></div>
-              <h3 className='text-xs md: text-sm font-light px-4 text-custom-logingreen'>atau</h3>
+              <h3 className='text-sm md: font-light px-4 text-custom-logingreen'>atau</h3>
               <div className='w-2/3 h-[1.5px] bg-custom-logingreen'></div>
             </div>
 

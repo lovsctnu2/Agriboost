@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Agriboost from '../assets/AgriBoost.svg';
-import Carbon from '../assets/Vector.svg';
-import Google from '../assets/devicon_google.svg';
-import Petani from '../assets/Group 1.svg';
+import Google from '../../assets/devicon_google.svg';
+import HeaderLogin from '../../components/HeaderLogin';
 import './Login.css';
 
 const Login = () => {
@@ -19,13 +17,11 @@ const Login = () => {
   };
 
   return (
-    <div className="text-custom-green h-[100vh] flex justify-center items-center">
-    <div className='m-10'>
-    <img src={Petani} />
+    <div >
+    <div >
     </div>
       <div>
-      <img src={Carbon} />
-        <img src={Agriboost} />
+      <HeaderLogin />
         <h1 className="text-2xl text-custom-darkgreen font-bold text-center py-4">
           Buat Akun
         </h1>
@@ -72,11 +68,11 @@ const Login = () => {
           </div>
 
 
-          <div className="mt-8 flex justify-between items-center">
+          <div className="mt-8 flex justify-between items-center text-sm">
             <div>
               <input type="checkbox" id="remember" />
               <label htmlFor="remember" className="ml-3 mt-0 text-sm ">
-              Saya setuju dengan <span className='font-bold'>kebijakan privasi</span> serta <span className='font-bold'>syarat dan ketentuan</span> <br />yang berlaku
+              Saya setuju dengan <span className='font-bold'>kebijakan privasi</span><br /> <span className='ml-6'>serta</span> <span className='font-bold'>syarat dan ketentuan</span> yang <br /><span className='ml-6'> berlaku</span>
               </label>
             </div>
           </div>
@@ -85,7 +81,7 @@ const Login = () => {
           <div className="mt-8 flex flex-col gap-y-4">
             <button
               className={`py-3 rounded-xl ${
-                isFilled ? 'bg-custom-green' : 'bg-custom-logingreen'
+                isFilled ? 'bg-custom-green' : 'bg-custom-login-green'
               } text-white text-normal`}
               disabled={!isFilled}>
               Daftar
@@ -93,7 +89,7 @@ const Login = () => {
 
             <div className='relative-fill flex items-center justify-center py-1'>
               <div className='w-2/3 h-[1.5px] bg-custom-logingreen'></div>
-              <h3 className='text-xs md: text-sm font-light px-4 text-custom-logingreen'>atau</h3>
+              <h3 className='md: text-sm font-light px-4 text-custom-logingreen'>atau</h3>
               <div className='w-2/3 h-[1.5px] bg-custom-logingreen'></div>
             </div>
 

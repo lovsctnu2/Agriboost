@@ -1,55 +1,46 @@
 import { createBrowserRouter } from "react-router-dom";
-import LoginPage from "../layout/LoginPage"
-import LandingPage from "../layout/LandingPage"
-import EksplorCampaign from "../layout/EksplorCampaign"
 
+
+import Home from "../pages/Home";
 import Login from "../pages/LoginPage/Login"
 import SignUp from "../pages/LoginPage/SignUp"
-import Home from "../pages/Home"
-import Header from "../pages/Header"
-import About from "../pages/About"
-import Footer from "../pages/Footer"
-import Kampanye from "../pages/Kampanye";
+import Verify from "../pages/Verify"
+import MainLayout from "../layout/MainLayout";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <LoginPage>
+      <MainLayout>
         <Login/>
-      </LoginPage>
+      </MainLayout>
     ),
   },
   {
     path: "/signUp",
     element: (
-      <LoginPage>
+      <MainLayout>
         <SignUp/>
-      </LoginPage>
+      </MainLayout>
     ),
   },
-  
   {
-    path: "/landing",
+    path: "/home",
     element: (
-      <LandingPage>
+      <MainLayout>
         <Home/>
-        <Header/>
-        <About/>
-        <Footer/>
-      </LandingPage>
+      </MainLayout>
     ),
   },
-
   {
-    path: "/Eksplor",
+    path: "/Verify",
     element: (
-      <EksplorCampaign>
-        <Kampanye/>
-      </EksplorCampaign>
+      <MainLayout>
+        <Verify/>
+      </MainLayout>
     ),
-  }
-
+  },
 ]);
 
 export default router;
