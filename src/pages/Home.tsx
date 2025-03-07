@@ -20,7 +20,7 @@ const Home = () => {
                     <span className="text-custom-yellow">Elevate</span><span>.</span>
                     <div className="flex justify-center items-center p-10">
                 <h3 className="font-medium text-black text-center text-sm">
-                    <span className="">Saatnya Beraksii!</span>
+                    <span className="">Saatnya beraksi!</span>
                     <span className="text-custom-dark-green font-bold"> Donasi, </span><span className="text-custom-green font-bold"> Belajar, </span><span> dan </span><br />
                     <span className="text-custom-yellow font-bold">Bangun Ekosistem Pertanian </span><span>yang Lebih<br /> Baik bersama </span>
                     <span className="text-custom-green font-bold">AgriBoost.</span>
