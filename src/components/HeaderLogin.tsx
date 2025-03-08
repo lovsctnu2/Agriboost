@@ -1,8 +1,6 @@
 
 import AgriboostLogo from '../assets/logo.svg';
 
-
-
 const HeaderLogin = () => {
   return (
     <div className='py-4 bg-white '>

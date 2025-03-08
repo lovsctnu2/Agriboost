@@ -17,12 +17,13 @@ const Login = () => {
   };
 
   return (
+    <div>
     <div >
-    <div >
+    <HeaderLogin />
     </div>
-      <div>
-      <HeaderLogin />
-        <h1 className="text-2xl text-custom-darkgreen font-bold text-center py-4">
+    <div className='flex justify-center '>
+      <div className='w-[320px] h-[774px] '>
+        <h1 className="text-2xl text-custom-darkgreen font-bold text-center px-5">
           Buat Akun
         </h1>
         <form action="">
@@ -88,9 +89,9 @@ const Login = () => {
             </button>
 
             <div className='relative-fill flex items-center justify-center py-1'>
-              <div className='w-2/3 h-[1.5px] bg-custom-logingreen'></div>
-              <h3 className='md: text-sm font-light px-4 text-custom-logingreen'>atau</h3>
-              <div className='w-2/3 h-[1.5px] bg-custom-logingreen'></div>
+              <div className='w-2/3 h-[1.5px] bg-custom-login-green'></div>
+              <h3 className='md: text-sm font-light px-4 text-custom-login-green'>atau</h3>
+              <div className='w-2/3 h-[1.5px] bg-custom-login-green'></div>
             </div>
 
             <button className="py-3 rounded-xl text-black flex items-center justify-center gap-2 border-2 border-black">
@@ -106,6 +107,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+  </div>
   );
 };
 
