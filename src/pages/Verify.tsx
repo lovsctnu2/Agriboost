@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import HeaderLogin from '../components/HeaderLogin';
 
 const Verify = () => {
     const [verificationCode, setVerificationCode] = useState<string>('');
+    const navigate = useNavigate(); 
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
         const newValue = e.target.value;
         if (newValue.length <= 1 && /^[0-9]*$/.test(newValue)) {
             const codeArray = verificationCode.split('');
             codeArray[index] = newValue;
-            setVerificationCode(codeArray.join('').padEnd(6, '')); // Memastikan panjang 6 karakter
+            setVerificationCode(codeArray.join('').padEnd(6, ''));
             if (newValue && index < 5) {
                 const nextInput = document.getElementById(`code-${index + 1}`) as HTMLInputElement;
                 nextInput?.focus();
@@ -32,6 +34,15 @@ const Verify = () => {
         }
     };
 
+    const handleSubmit = () => {
+        if (verificationCode.length === 6) {
+        
+            navigate('/home');
+        } else {
+            alert('Kode verifikasi tidak lengkap');
+        }
+    };
+
     const codeInputs = Array.from({ length: 6 }, (_, index) => (
         <input
             key={index}
@@ -47,21 +58,33 @@ const Verify = () => {
     ));
 
     return (
-      <div>
-        <HeaderLogin />
-      <div className="px-5 py-8"> 
-            <div className="my-8 text-custom-real-dark-green text-center">
-                <h4 className="text-xl font-bold ">Verifikasi Akun</h4>
-                <h5 className="text-sm font-semibold mt-10">Masukkan 6 digit kode verifikasi yang telah dikirim ke nomor 0851****0007</h5>
-                <div className="flex justify-center text-xl font-bold space-x-1 my-[144px] ">{codeInputs}</div>
-                <button className="bg-custom-green w-[319px] h-[45px] text-white text-sm py-3 px-5 rounded-lg font-semibold">KIRIM</button>
-                <h6 className="mt-8 text-xs font-normal">Belum menerima kode?<span>
-                    <button className="text-xs font-bold">
-                        &nbsp;Kirim ulang
+        <div>
+            <HeaderLogin />
+            <div className="px-5 py-8">
+                <div className="my-8 text-custom-real-dark-green text-center">
+                    <h4 className="text-xl font-bold">Verifikasi Akun</h4>
+                    <h5 className="text-sm font-semibold mt-10">
+                        Masukkan 6 digit kode verifikasi yang telah dikirim ke nomor 0851****0007
+                    </h5>
+                    <div className="flex justify-center text-xl font-bold space-x-1 my-[144px]">
+                        {codeInputs}
+                    </div>
+                    <button
+                        onClick={handleSubmit} 
+                        className="bg-custom-green w-[319px] h-[45px] text-white text-sm py-3 px-5 rounded-lg font-semibold"
+                    >
+                        KIRIM
                     </button>
-                </span></h6>
+                    <h6 className="mt-8 text-xs font-normal">
+                        Belum menerima kode?
+                        <span>
+                            <button className="text-xs font-bold">
+                                &nbsp;Kirim ulang
+                            </button>
+                        </span>
+                    </h6>
+                </div>
             </div>
-        </div>
         </div>
     );
 };

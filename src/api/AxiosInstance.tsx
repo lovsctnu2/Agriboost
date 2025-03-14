@@ -1,8 +1,6 @@
 import axios from "axios";
 import Cookies from 'js-cookie';
 
-
-
 const Https = axios.create({
     baseURL: "https://be-intern.bccdev.id/agung/api",
     headers: {

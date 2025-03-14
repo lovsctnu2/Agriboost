@@ -27,7 +27,7 @@ const Header: React.FC = () => {
 
     return (
         <nav className="relative py-4 bg-custom-green">
-            <div className="flex justify-between items-center px-4 md:px-8 lg:px-16">
+            <div className="flex justify-between items-center px-4 lg:px-16 lg:[100px]">
                 <img src={AgriboostWhite} className="inline-block" alt="AgriBoost Logo" />
                 <div className="hidden md:flex space-x-4 lg:space-x-8 items-center">
                     <div className="relative">

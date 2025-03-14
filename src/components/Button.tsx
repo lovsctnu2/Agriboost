@@ -3,8 +3,8 @@ import React from 'react';
 interface CustomButtonProps {
   text: string;
   bgClassName: string;
-  textColorClass?: string; // Optional text color class
-  borderColorClass?: string; // Optional property
+  textColorClass?: string; 
+  borderColorClass?: string; 
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({

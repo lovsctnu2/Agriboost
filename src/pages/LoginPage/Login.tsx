@@ -113,7 +113,7 @@ const Login = () => {
           console.log(data)
           login(data, (success, message) => {
             if (success) {
-              navigate('/Landing'); 
+              navigate('/home'); 
             } else {
               console.error("Login gagal:", message); 
               setErrorLogin("Login gagal. Email atau password salah")
