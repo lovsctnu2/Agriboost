@@ -1,4 +1,3 @@
-// PasswordInput.tsx
 import React from 'react';
 import open from '../assets/openEyes.svg';
 import hide from '../assets/hideEyes.svg'

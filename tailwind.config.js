@@ -12,6 +12,7 @@ export default {
         'custom-yellow' : '#8A7E32',
         'custom-light-yellow' : '#B8A842',
         'custom-mid-yellow' : '#AD9E3E',
+        'custom-light-yellow' : '#FDFBEE',
         'custom-login-green' : '#BAD2CA',
         'custom-light-green' : '#E9F1EE',
         'custom-real-dark-green' : '#0C271D',

@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LandingPage from '../assets/Landing page.svg';
 
@@ -20,9 +20,9 @@ import arrowWhite from "../assets/arrowWhite.svg"
 const Home = () => {
     return (
         <div>
-            <Header />
+            <Navbar />
             <div className="justify-center pt-14 w-[360px] h-[718px]">
-                {/* Landing page image */}
+            
                 <img src={LandingPage} className='w-[360px] h-[197px] mb-[32px]' />
                 <div className="flex justify-center items-center">
                 <h2 className="font-bold text-4xl text-black text-center gap-[32px]">
@@ -126,29 +126,29 @@ const Home = () => {
                 <div className=" py-3 px-3 rounded-xl bg-custom-light-green text-custom-real-dark-green text-sm font-semibold flex  gap-2 w-[320px] h-[45px] mb-3">
                 Bagaimana cara saya berdonasi?
                 <img
-                src={dropdown} // Ganti dengan path gambar Anda
-                className="w-4 h-4 flex justify-end ml-auto" // Sesuaikan ukuran gambar di sini
+                src={dropdown} 
+                className="w-4 h-4 flex justify-end ml-auto" 
                 />
                 </div>
                 <div className=" py-3 px-3 rounded-xl bg-custom-light-green text-custom-real-dark-green text-sm font-semibold flex  gap-2 w-[320px] h-[66px] mb-3">
                 Apa manfaat bergabung dengan Komunitas?
                 <img
-                src={dropdown} // Ganti dengan path gambar Anda
-                className="w-4 h-4 flex justify-end ml-auto" // Sesuaikan ukuran gambar di sini
+                src={dropdown}
+                className="w-4 h-4 flex justify-end ml-auto" 
                 />
                 </div>
                 <div className=" py-3 px-3 rounded-xl bg-custom-light-green text-custom-real-dark-green text-sm font-semibold flex  gap-2 w-[320px] h-[45px] mb-3">
                 Apa itu fitur kuis di website ini?
                 <img
-                src={dropdown} // Ganti dengan path gambar Anda
-                className="w-4 h-4 flex justify-end ml-auto" // Sesuaikan ukuran gambar di sini
+                src={dropdown} 
+                className="w-4 h-4 flex justify-end ml-auto" 
                 />
                 </div>
                 <div className=" py-3 px-3 rounded-xl bg-custom-light-green text-custom-real-dark-green text-sm font-semibold flex  gap-2 w-[320px] h-[66px] mb-8">
                 Apakah saya harus membuat akun untuk berdonasi?
                 <img
-                src={dropdown} // Ganti dengan path gambar Anda
-                className="w-4 h-4 flex justify-end ml-auto" // Sesuaikan ukuran gambar di sini
+                src={dropdown} 
+                className="w-4 h-4 flex justify-end ml-auto" 
                 />
                 </div>
                 </div>

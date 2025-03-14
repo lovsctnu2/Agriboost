@@ -12,7 +12,7 @@ const AgriBoostSection: React.FC<AgriBoostSectionProps> = ({
   sustain,
 }) => {
   return (
-    <div className="flex justify-center py-8 bg-custom-light-green">
+    <div className="flex justify-center py-8 bg-custom-light-green lg:w-full lg:h-full">
       <div className="flex flex-col items-center justify-center w-full max-w-4xl">
         <h3 className="text-custom-superdark-green font-bold text-2xl text-center">
           <span>Mengapa</span>
@@ -21,7 +21,7 @@ const AgriBoostSection: React.FC<AgriBoostSectionProps> = ({
         </h3>
 
         {/* Container setelah kalimat */}
-        <div className="mt-8 my-4 bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green gap-1 flex flex-col items-center">
+        <div className="mt-8 my-4 bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green gap-1 flex flex-col lg: flex-row items-center">
           <img src={refund} className="h-10" alt="Refund Icon" />
           <h4 className="text-custom-superdark-green font-bold text-base text-center">
             Akses <span className="text-custom-green">Modal Cepat,</span>

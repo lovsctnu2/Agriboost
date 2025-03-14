@@ -6,7 +6,13 @@ import InputForm from '../../components/InputForm';
 import InputPassword from '../../components/InputPassword';
 import './Login.css';
 
-const Login: React.FC = () => {
+interface SignUp {
+    email: string;
+    noHandphone: string;
+    password: string;
+}
+
+const SignUp: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [emailError, setEmailError] = useState<string>('');
     const [noHandphone, setNoHandphone] = useState<string>('');
@@ -15,40 +21,34 @@ const Login: React.FC = () => {
     const [passwordError, setPasswordError] = useState<string>('');
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [isFilled, setIsFilled] = useState<boolean>(false);
-    const [isChecked, setIsChecked] = useState<boolean>(false); // state untuk checkbox
+    const [isChecked, setIsChecked] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
-    // Validasi email
     const validateEmail = (email: string) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailRegex.test(email);
     };
 
-    // Validasi nomor handphone (12-15 digit angka)
     const validateNoHandphone = (noHandphone: string) => {
         const phoneRegex = /^[0-9]{12,15}$/;
         return phoneRegex.test(noHandphone);
     };
 
-    // Validasi password (harus ada huruf kecil, huruf besar, angka, dan karakter spesial)
     const validatePassword = (password: string) => {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         return passwordRegex.test(password);
     };
 
-    // Fungsi untuk mengecek apakah semua input terisi dan valid
     const inputTerisi = () => {
-        const isEmailValid = validateEmail(email); // Validasi email
-        const isPhoneValid = validateNoHandphone(noHandphone); // Validasi nomor handphone
-        const passwordValidationError = validatePassword(password); // Validasi password
+        const isEmailValid = validateEmail(email);
+        const isPhoneValid = validateNoHandphone(noHandphone);
+        const passwordValidationError = validatePassword(password);
 
-        // Set error message berdasarkan hasil validasi
         setEmailError(isEmailValid ? '' : 'Email tidak valid');
         setNoHandphoneError(isPhoneValid ? '' : 'Nomor handphone harus berisi angka dengan panjang antara 12 hingga 15 digit');
         setPasswordError(passwordValidationError ? '' : 'Password minimal 8 karakter dengan menggunakan huruf kecil, huruf besar, angka, dan karakter spesial');
 
-        // Aktifkan tombol hanya jika semua input valid dan checkbox dicentang
         setIsFilled(
             email !== '' &&
             noHandphone !== '' &&
@@ -56,13 +56,13 @@ const Login: React.FC = () => {
             isEmailValid &&
             isPhoneValid &&
             passwordValidationError &&
-            isChecked // Checkbox juga harus dicentang
+            !isChecked
         );
     };
 
     const handleCheckboxChange = () => {
-        setIsChecked(!isChecked); // toggle state checkbox
-        inputTerisi(); // Menjalankan validasi kembali ketika checkbox diubah
+        setIsChecked(!isChecked);
+        inputTerisi();
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -75,7 +75,6 @@ const Login: React.FC = () => {
     };
 
     const handleLoginClick = () => {
-        // Ketika tombol masuk diklik, navigasi ke halaman login
         navigate('/');
     };
 
@@ -127,7 +126,7 @@ const Login: React.FC = () => {
                                 <input
                                     type="checkbox"
                                     id="remember"
-                                    checked={!isChecked}
+                                    checked={isChecked} // Perbaikan di sini
                                     onChange={handleCheckboxChange}
                                 />
                                 <label htmlFor="remember" className="ml-3 mt-0 text-sm">
@@ -153,7 +152,7 @@ const Login: React.FC = () => {
                             </div>
 
                             <button className="py-3 rounded-xl text-black flex items-center justify-center gap-2 border-2 border-black">
-                                <img src={Google} className='flex flex-row items-start w-5 h-5 mr-2' alt='google icon'/>
+                                <img src={Google} className='flex flex-row items-start w-5 h-5 mr-2' alt='google icon' />
                                 Daftar dengan Google
                             </button>
 
@@ -169,4 +168,4 @@ const Login: React.FC = () => {
     );
 };
 
-export default Login;
+export default SignUp;

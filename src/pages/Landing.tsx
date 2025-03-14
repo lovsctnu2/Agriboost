@@ -33,16 +33,16 @@ const Landing = () => {
     return (
         <div>
             <Header />
-            <div className="justify-center pt-14 w-[360px] h-[718px]">
+            <div className="justify-center pt-14 w-full lg:w-[1024px] lg:mx-auto">
                 {/* Landing page image */}
-                <img src={LandingPage} className='w-[360px] h-[197px] mb-[32px]' />
+                <img src={LandingPage} className='w-full lg:w-[600px] lg:h-auto mb-[32px] lg:mb-0 lg:mx-auto blockh-[197px] mb-[32px]' />
                 <div className="flex justify-center items-center">
-                <h2 className="font-bold text-4xl text-black text-center gap-[32px]">
+                <h2 className="font-bold text-4xl text-black text-center lg:text-center lg: mt-5 gap-[32px]">
                     <span className="text-custom-dark-green">Donate</span><span>,</span><br />
                     <span className="text-custom-green">Educate</span><span>,</span><br />
                     <span className="text-custom-yellow">Elevate</span><span>.</span>
                 <div className="flex justify-center items-center p-10">
-                <h3 className="font-medium text-black text-center text-sm ">
+                <h3 className="font-medium text-black text-center text-sm">
                     <span className="">Saatnya beraksi!</span>
                     <span className="text-custom-dark-green font-bold"> Donasi, </span><span className="text-custom-green font-bold"> Belajar, </span><span> dan </span><br />
                     <span className="text-custom-yellow font-bold">Bangun Ekosistem Pertanian </span><span>yang Lebih<br /> Baik bersama </span>
@@ -52,7 +52,7 @@ const Landing = () => {
                 </h2>
                 
             </div>
-            <div className="flex flex-col items-center gap-1 mb-36">
+            <div>
             <div className="flex flex-col items-center gap-1 mb-36">
       <Button
         text="DONASI"

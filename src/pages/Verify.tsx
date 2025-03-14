@@ -54,7 +54,7 @@ const Verify = () => {
                 <h4 className="text-xl font-bold ">Verifikasi Akun</h4>
                 <h5 className="text-sm font-semibold mt-10">Masukkan 6 digit kode verifikasi yang telah dikirim ke nomor 0851****0007</h5>
                 <div className="flex justify-center text-xl font-bold space-x-1 my-[144px] ">{codeInputs}</div>
-                <button className="bg-custom-green text-white text-sm py-3 px-5 w-full rounded-lg font-semibold">KIRIM</button>
+                <button className="bg-custom-green w-[319px] h-[45px] text-white text-sm py-3 px-5 rounded-lg font-semibold">KIRIM</button>
                 <h6 className="mt-8 text-xs font-normal">Belum menerima kode?<span>
                     <button className="text-xs font-bold">
                         &nbsp;Kirim ulang
