@@ -4,7 +4,7 @@ import Hamburger from '../assets/Hamburger.svg';
 import closeHamburger from '../assets/closeHamburger.svg';
 import chevron from '../assets/chevron.svg';
 import chevronUp from '../assets/chevronUp.svg';
-import profile from '../assets/Profile.svg';
+
 
 
 const Navbar = () => {
@@ -37,7 +37,6 @@ const Navbar = () => {
 
                     {/* Profil Pengguna */}
                     <div className="flex items-center mb-6">
-                        <img src={profile} alt="User Profile" className="w-12 h-12 rounded-full mr-3" />
                         <div>
                             <p className="text-white font-semibold">Rosa Diggory</p>
                             <p className="text-white text-sm">Donatur Pemula</p>
