@@ -17,7 +17,7 @@ const Login = () => {
   const [isFilled, setIsFilled] = useState<boolean>(false);
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
-  const navigate = useNavigate(); // Menambahkan useNavigate untuk navigasi
+  const navigate = useNavigate(); 
 
   // Validasi email
   const validateEmail = (email: string) => {
@@ -46,7 +46,7 @@ const Login = () => {
     setPasswordError(passwordValidationError ? '' : 'Password minimal 8 karakter dengan menggunakan huruf kecil, huruf besar, angka, dan karakter.');
     setConfirmPasswordError(confirmPasswordValidationError ? '' : 'Password dan konfirmasi kata sandi tidak cocok');
 
-    // Hanya aktif jika semua input valid
+    // tombol masuk aktif jika semua input terisi dan valid
     setIsFilled(
       email !== '' &&
       password !== '' &&

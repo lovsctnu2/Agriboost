@@ -6,6 +6,7 @@ interface InputFormProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   errorMessage?: string;
+  optional?: boolean;
 }
 
 const InputForm: React.FC<InputFormProps> = ({

@@ -21,19 +21,19 @@ const AgriBoostSection: React.FC<AgriBoostSectionProps> = ({
         </h3>
 
         {/* Container setelah kalimat */}
-        <div className="my-8 bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green mb-4 gap-2 flex flex-col items-center">
+        <div className="mt-8 my-4 bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green gap-1 flex flex-col items-center">
           <img src={refund} className="h-10" alt="Refund Icon" />
           <h4 className="text-custom-superdark-green font-bold text-base text-center">
             Akses <span className="text-custom-green">Modal Cepat,</span>
             <br />
             <span>Hasil Panen Maksimal</span>
           </h4>
-          <h5 className="text-sm font-normal text-center text-custom-green ">
+          <h5 className="text-sm font-normal text-center text-custom-green mb-2 ">
             Membantu petani mendapatkan pendanaan yang mudah dan cepat
           </h5>
         </div>
 
-        <div className="bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green mb-4 gap-2 flex flex-col items-center">
+        <div className="bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green mb-4 gap-1 flex flex-col items-center">
           <img src={petanilogo} className="h-10" alt="Petani Logo" />
           <h4 className="text-custom-superdark-green font-bold text-base text-center">
             <span className="text-custom-green">Dukung Petani </span>
@@ -46,7 +46,7 @@ const AgriBoostSection: React.FC<AgriBoostSectionProps> = ({
           </h5>
         </div>
 
-        <div className="bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green mb-4 gap-2 flex flex-col items-center">
+        <div className="bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green mb-4 gap-1 flex flex-col items-center">
           <img src={molekul} className="h-10" alt="Molekul Icon" />
           <h4 className="text-custom-superdark-green font-bold text-base text-center">
             <span className="text-custom-green">Teknologi Tepat</span>
@@ -59,7 +59,7 @@ const AgriBoostSection: React.FC<AgriBoostSectionProps> = ({
           </h5>
         </div>
 
-        <div className="bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green mb-4 gap-2 flex flex-col items-center">
+        <div className="bg-white font-semibold text-sm py-4 px-[20px] rounded-[20px] w-[320px] h-[162px] border-[3px] leading-[130%] border-custom-green gap-1 flex flex-col items-center">
           <img src={sustain} className="h-10" alt="Sustain Icon" />
           <h4 className="text-custom-superdark-green font-bold text-base text-center">
             <span className="text-custom-green">Panen Melimpah</span>
