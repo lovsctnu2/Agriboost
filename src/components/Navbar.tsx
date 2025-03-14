@@ -4,7 +4,7 @@ import Hamburger from '../assets/Hamburger.svg';
 import closeHamburger from '../assets/closeHamburger.svg';
 import chevron from '../assets/chevron.svg';
 import chevronUp from '../assets/chevronUp.svg';
-import profile from '../assets/Profile.svg'
+import profile from '../assets/Profile.svg';
 
 
 const Navbar = () => {
