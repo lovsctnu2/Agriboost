@@ -84,7 +84,7 @@ const SignUp: React.FC = () => {
                         if (success) {
                           navigate('/Verify'); 
                         } else {
-                          setErrorSignUp("Registrasi gagal.")
+                          setErrorSignUp("Email sudah terdaftar.")
                         }
                       });
         } else {
