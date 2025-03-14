@@ -17,10 +17,14 @@ export const login = async (data: Login, callback: Callback): Promise<void> => {
     try {
         const res = await axiosInstance.post("/v1/users/login", data);
         console.log(res)
-        const token = res.data.payload.token;
-        Cookies.set("token", token);
-        callback(true, token);
+        const payload = res.data.payload;
+        if (res.status ==200){
+            callback(true, payload);
+        } 
+       
+        
     } catch (error) {
+        console.log(error)
         if (typeof error === 'object' && error !== null && 'message' in error) {
             const apiError = error as ApiError;
             callback(false, apiError.message || "Terjadi kesalahan");
@@ -34,16 +38,19 @@ export const login = async (data: Login, callback: Callback): Promise<void> => {
 
 interface SignUp {
     email: string;
-    noHandphone: string;
+    phone: string;
     password: string;
 }
 
-export const SignUp = async (data: SignUp, callback: Callback): Promise<void> => {
+export const signUp = async (data: SignUp, callback: Callback): Promise<void> => {
     try {
-        const res = await axiosInstance.post("/v1/users/login", data);
-        const token = res.data.payload.token;
-        Cookies.set("token", token);
-        callback(true, token);
+        const res = await axiosInstance.post("/v1/users/register", data);
+        console.log(res)
+        const payload = res.data.payload;
+        if (res.status ==200){
+            callback(true, payload);
+        } 
+        
     } catch (error) {
         if (typeof error === 'object' && error !== null && 'message' in error) {
             const apiError = error as ApiError;

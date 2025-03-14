@@ -4,22 +4,28 @@ import Google from '../../assets/devicon_google.svg';
 import HeaderLogin from '../../components/HeaderLogin';
 import InputForm from '../../components/InputForm';
 import InputPassword from '../../components/InputPassword';
-import './Login.css';
+import {signUp} from '../../api/Authetntication';
+
 
 interface SignUp {
     email: string;
-    noHandphone: string;
+    phone: string;
     password: string;
 }
+
+interface SignUpErrorMessageProps {
+    message: string;
+  }
 
 const SignUp: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [emailError, setEmailError] = useState<string>('');
-    const [noHandphone, setNoHandphone] = useState<string>('');
+    const [phone, setPhone] = useState<string>('');
     const [noHandphoneError, setNoHandphoneError] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [passwordError, setPasswordError] = useState<string>('');
     const [showPassword, setShowPassword] = useState<boolean>(false);
+    const [errorSignUp, setErrorSignUp] = useState<string>('');
     const [isFilled, setIsFilled] = useState<boolean>(false);
     const [isChecked, setIsChecked] = useState<boolean>(false);
 
@@ -42,7 +48,7 @@ const SignUp: React.FC = () => {
 
     const inputTerisi = () => {
         const isEmailValid = validateEmail(email);
-        const isPhoneValid = validateNoHandphone(noHandphone);
+        const isPhoneValid = validateNoHandphone(phone);
         const passwordValidationError = validatePassword(password);
 
         setEmailError(isEmailValid ? '' : 'Email tidak valid');
@@ -51,7 +57,7 @@ const SignUp: React.FC = () => {
 
         setIsFilled(
             email !== '' &&
-            noHandphone !== '' &&
+            phone !== '' &&
             password !== '' &&
             isEmailValid &&
             isPhoneValid &&
@@ -67,8 +73,20 @@ const SignUp: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (email && noHandphone && password && validateEmail(email) && validateNoHandphone(noHandphone)) {
-            navigate('/Verify');
+        if (email && phone && password && validateEmail(email) && validateNoHandphone(phone)) {
+            const data = {
+                        email : email,
+                        phone : phone,
+                        password : password
+                      }
+                      console.log(data)
+                      signUp(data, (success) => {
+                        if (success) {
+                          navigate('/Verify'); 
+                        } else {
+                          setErrorSignUp("Registrasi gagal.")
+                        }
+                      });
         } else {
             console.log('Form tidak lengkap atau tidak valid');
         }
@@ -77,6 +95,19 @@ const SignUp: React.FC = () => {
     const handleLoginClick = () => {
         navigate('/');
     };
+
+    const SignUpErrorMessage: React.FC<SignUpErrorMessageProps> = ({ message }) => {
+          if (!message) return null; 
+        
+          return (
+            <div
+              className="bg-red-100 text-red-700 border border-red-400 p-3 rounded-lg mt-3 text-sm text-center 
+                         animate-fade-in"
+            >
+              {message}
+            </div>
+          );
+        };
 
     return (
         <div>
@@ -101,9 +132,9 @@ const SignUp: React.FC = () => {
                         <InputForm
                             label="No Handphone"
                             type="text"
-                            value={noHandphone}
+                            value={phone}
                             onChange={(e) => {
-                                setNoHandphone(e.target.value);
+                                setPhone(e.target.value);
                                 inputTerisi();
                             }}
                             errorMessage={noHandphoneError}
@@ -137,10 +168,12 @@ const SignUp: React.FC = () => {
                             </div>
                         </div>
 
+                        <SignUpErrorMessage message = {errorSignUp}/>
+
                         <div className="mt-8 flex flex-col gap-y-4">
                             <button
                                 className={`py-3 rounded-xl ${isFilled ? 'bg-custom-green' : 'bg-custom-login-green'} text-white text-normal`}
-                                disabled={!isFilled}
+                                disabled={!isFilled} 
                             >
                                 Daftar
                             </button>

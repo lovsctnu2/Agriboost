@@ -16,7 +16,6 @@ import arrow from "../assets/arrow.svg"
 import arrowWhite from "../assets/arrowWhite.svg"
 
 
-
 const Home = () => {
     return (
         <div>

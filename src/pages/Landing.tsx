@@ -68,10 +68,7 @@ const Landing = () => {
     </div>
             </div>
             </div>
-
-            
-
-            
+  
 {/* page 2 */}
 <div>
       <AgriBoostSection

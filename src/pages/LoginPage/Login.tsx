@@ -19,12 +19,17 @@ interface Login {
     isChecked: boolean;
 }
 
+interface LoginErrorMessageProps {
+  message: string;
+}
+
 const Login = () => {
     const [email, setEmail] = useState<string>('');
     const [emailError, setEmailError] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [passwordError, setPasswordError] = useState<string>('');
     const [showPassword, setShowPassword] = useState<boolean>(false);
+    const [errorLogin, setErrorLogin] = useState<string>('');
     // const [confirmPassword, setConfirmPassword] = useState<string>('');
     // const [confirmPasswordError, setConfirmPasswordError] = useState<string>('');
     // const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
@@ -106,7 +111,15 @@ const Login = () => {
             password : password
           }
           console.log(data)
-          login(data, () => navigate('/Landing'))
+          login(data, (success, message) => {
+            if (success) {
+              navigate('/Landing'); 
+            } else {
+              console.error("Login gagal:", message); 
+              setErrorLogin("Login gagal. Email atau password salah")
+            }
+          });
+
         } else {
             console.log('Form tidak lengkap');
         }
@@ -114,6 +127,19 @@ const Login = () => {
 
     const handleRegistClick = () => {
         navigate('/SignUp');
+    };
+
+    const LoginErrorMessage: React.FC<LoginErrorMessageProps> = ({ message }) => {
+      if (!message) return null; 
+    
+      return (
+        <div
+          className="bg-red-100 text-red-700 border border-red-400 p-3 rounded-lg mt-3 text-sm text-center 
+                     animate-fade-in"
+        >
+          {message}
+        </div>
+      );
     };
 
     useEffect(() => {
@@ -171,7 +197,7 @@ const Login = () => {
                                 Lupa Kata Sandi?
                             </button>
                         </div>
-
+                        <LoginErrorMessage message = {errorLogin}/>
                         <div className="mt-8 flex flex-col gap-y-4">
                             <button
                                 className={`py-3 rounded-xl ${isFilled ? 'bg-custom-green' : 'bg-custom-login-green'} text-white text-normal`}
