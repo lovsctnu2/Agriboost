@@ -157,7 +157,7 @@ const SignUp: React.FC = () => {
                                 <input
                                     type="checkbox"
                                     id="remember"
-                                    checked={isChecked} // Perbaikan di sini
+                                    checked={isChecked} 
                                     onChange={handleCheckboxChange}
                                 />
                                 <label htmlFor="remember" className="ml-3 mt-0 text-sm">

@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                             </ul>
                         )}
                     </div>
-                    <Link to="/" className="bg-white text-custom-green text-base font-semibold py-3 px-6 rounded-[10px]">Masuk</Link>
+                    <Link to="/login" className="bg-white text-custom-green text-base font-semibold py-3 px-6 rounded-[10px]">Masuk</Link>
                 </div>
                 <button className="md:hidden" onClick={toggleDropdown}>
                     <img src={Hamburger} className="inline-block" alt="Hamburger Menu" />

@@ -14,7 +14,7 @@ import MainLayout from "../layout/MainLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: (
       <MainLayout>
         <Login/>
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/landing",
+    path: "/",
     element: (
       <MainLayout>
         <Landing/>

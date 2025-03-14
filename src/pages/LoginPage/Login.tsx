@@ -113,7 +113,7 @@ const Login = () => {
           console.log(data)
           login(data, (success, message) => {
             if (success) {
-              navigate('/home'); 
+              navigate('/biodata'); 
             } else {
               console.error("Login gagal:", message); 
               setErrorLogin("Login gagal. Email atau password salah")
@@ -144,7 +144,7 @@ const Login = () => {
 
     useEffect(() => {
         inputTerisi();
-    }, [email, password, isChecked]); // Tambahkan isChecked ke dependency array
+    }, [email, password, isChecked]); 
 
     return (
         <div>
@@ -186,7 +186,7 @@ const Login = () => {
                                 <input
                                     type="checkbox"
                                     id="remember"
-                                    checked={isChecked} // Perbaikan di sini
+                                    checked={isChecked} 
                                     onChange={handleCheckboxChange}
                                 />
                                 <label htmlFor="remember" className="text-sm ml-2">
