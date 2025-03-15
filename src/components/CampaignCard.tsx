@@ -34,7 +34,7 @@ const CampaignCard: React.FC<CampaignCardProps> = ({
     height = '270px';
   }
 
-  // Static values for donations and collected amount
+  
   const donations = 123;
   const collectedAmount = 15000000;
 

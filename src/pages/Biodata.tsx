@@ -6,7 +6,7 @@ import InputForm from '../components/InputForm';
 const Biodata = () => {
   const [name, setName] = useState<string>('');
   const [job, setJob] = useState<string>('');
-  const [institution, setInstitution] = useState<string>(''); // Opsional
+  const [institution, setInstitution] = useState<string>(''); 
   const [address, setAddress] = useState<string>('');
   const [isFilled, setIsFilled] = useState<boolean>(false);
 

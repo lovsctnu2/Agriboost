@@ -22,7 +22,7 @@ const AgriBoostSection: React.FC<AgriBoostSectionProps> = ({
                     <br />
                 </h3>
 
-                <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8"> {/* Atur grid 2x2 di lg */}
+                <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8"> 
                     <div className="bg-white font-semibold text-sm py-6 px-6 rounded-[20px] w-full h-auto border-[3px] leading-[130%] border-custom-green flex flex-col items-center mb-4 lg:mb-0">
                         <img src={refund} className="h-10 mb-4" alt="Refund Icon" />
                         <h4 className="text-custom-superdark-green font-bold text-base text-center mb-2">

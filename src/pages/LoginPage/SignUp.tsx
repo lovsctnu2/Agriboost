@@ -93,7 +93,7 @@ const SignUp: React.FC = () => {
     };
 
     const handleLoginClick = () => {
-        navigate('/');
+        navigate('/login');
     };
 
     const SignUpErrorMessage: React.FC<SignUpErrorMessageProps> = ({ message }) => {
